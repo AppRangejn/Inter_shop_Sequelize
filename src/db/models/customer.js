@@ -1,7 +1,6 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+const { Model } = require('sequelize');
+const bcrypt = require('bcrypt');
 module.exports = (sequelize, DataTypes) => {
   class Customer extends Model {
     /**
@@ -13,12 +12,32 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Customer.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Customer',
-  });
+  Customer.init(
+    {
+      name: {
+        type: DataTypes.STRING,
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: {
+            msg: 'Must be a valid email address',
+          },
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        set(value) {
+          this.setDataValue('password', bcrypt.hashSync(value, 10));
+        },
+      },
+    },
+    {
+      sequelize,
+      modelName: 'Customer',
+    },
+  );
   return Customer;
 };
