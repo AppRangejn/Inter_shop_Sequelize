@@ -7,5 +7,6 @@
   "20261108014624-create-model.js",
   "20261108014654-create-item.js",
   "20261108014712-create-order.js",
-  "20261108014728-create-item-order.js"
+  "20261108014728-create-item-order.js",
+  "20261108024222-add-password-to-customers.js"
 ]
