@@ -9,6 +9,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Model.belongsTo(models.Brand, {
+        foreignKey: 'brand_id',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+      });
+
+      Model.hasMany(models.Item, {
+        foreignKey: 'model_id',
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+      });
     }
   }
   Model.init(
@@ -20,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Model',
+      tableName: 'Models',
     },
   );
   return Model;
