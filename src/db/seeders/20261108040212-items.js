@@ -1,0 +1,101 @@
+'use strict';
+
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert(
+      'Items',
+      [
+        {
+          id: 1,
+          category_id: 1,
+          type_id: 1,
+          brand_id: 1,
+          model_id: 1,
+          price: 98000.0,
+          store_id: 1,
+          quantity: 10,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 2,
+          category_id: 2,
+          type_id: 3,
+          brand_id: 1,
+          model_id: 2,
+          price: 54000.0,
+          store_id: 1,
+          quantity: 25,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 3,
+          category_id: 2,
+          type_id: 3,
+          brand_id: 2,
+          model_id: 3,
+          price: 47000.0,
+          store_id: 2,
+          quantity: 15,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 4,
+          category_id: 1,
+          type_id: 2,
+          brand_id: 3,
+          model_id: 4,
+          price: 82000.0,
+          store_id: 3,
+          quantity: 8,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 5,
+          category_id: 1,
+          type_id: 1,
+          brand_id: 3,
+          model_id: 5,
+          price: 41000.0,
+          store_id: 2,
+          quantity: 12,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 6,
+          category_id: 2,
+          type_id: 3,
+          brand_id: 4,
+          model_id: 6,
+          price: 29000.0,
+          store_id: 1,
+          quantity: 30,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          id: 7,
+          category_id: 3,
+          type_id: 4,
+          brand_id: 5,
+          model_id: 7,
+          price: 14500.0,
+          store_id: 3,
+          quantity: 20,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {},
+    );
+  },
+
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete('Items', null, {});
+  },
+};
