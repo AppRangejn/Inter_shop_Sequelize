@@ -1,9 +1,9 @@
 const createError = require('http-errors');
-const { Model: ItemModel } = require('../db/models');
+const { Model } = require('../db/models');
 
 module.exports.getModels = async (req, res, next) => {
   try {
-    const models = await ItemModel.findAll({
+    const models = await Model.findAll({
       limit: 10,
       order: [['id', 'ASC']],
       raw: true,

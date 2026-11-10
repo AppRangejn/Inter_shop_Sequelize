@@ -1,5 +1,5 @@
 const createError = require('http-errors');
-const { Customer, Order, Item, sequelize } = require('../db/models');
+const { Customer, sequelize } = require('../db/models');
 
 module.exports.getCustomers = async (req, res, next) => {
   try {
