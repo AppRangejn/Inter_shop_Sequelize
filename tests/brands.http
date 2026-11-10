@@ -1,4 +1,4 @@
-### 1. Отримати всі бренди 
+### 1. Отримати всі бренди
 GET http://localhost:5000/api/brands
 Content-Type: application/json
 
@@ -15,5 +15,5 @@ DELETE http://localhost:5000/api/brands
 Content-Type: application/json
 
 {
-  "titles": ["Samsung"]
+  "titles": ["Xiaomi"]
 }

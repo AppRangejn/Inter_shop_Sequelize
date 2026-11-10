@@ -1,4 +1,4 @@
-### 1. Отримати всі товари 
+### 1. Отримати всі товари
 GET http://localhost:5000/api/items
 Content-Type: application/json
 
@@ -11,6 +11,6 @@ PATCH http://localhost:5000/api/items/7
 Content-Type: application/json
 
 {
-  "price": 1299.99,
+  "price": 1500,
   "quantity": 50
 }

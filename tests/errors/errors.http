@@ -1,0 +1,66 @@
+### 1. Помилка: порожній масив назв брендів
+POST http://localhost:5000/api/brands/by-titles
+Content-Type: application/json
+
+{
+  "titles": []
+}
+
+### 2. Помилка: пробіли замість назви бренду
+POST http://localhost:5000/api/brands/by-titles
+Content-Type: application/json
+
+{
+  "titles": ["Apple", "   "]
+}
+
+### 3. Помилка: передано рядок замість масиву
+POST http://localhost:5000/api/brands/by-titles
+Content-Type: application/json
+
+{
+  "titles": "Apple"
+}
+
+### 4. Помилка: видалення брендів без поля titles
+DELETE http://localhost:5000/api/brands
+Content-Type: application/json
+
+{
+  "wrongField": ["Apple"]
+}
+
+### 5. Помилка: бренди не знайдено в БД (404)
+POST http://localhost:5000/api/brands/by-titles
+Content-Type: application/json
+
+{
+  "titles": ["nonameBrand"]
+}
+
+### 6. Помилка: видалення неіснуючого бренду (404)
+DELETE http://localhost:5000/api/brands
+Content-Type: application/json
+
+{
+  "titles": ["nonameBrand"]
+}
+
+### 7. Помилка: невалідні типи даних при оновленні
+PATCH http://localhost:5000/api/items/1
+Content-Type: application/json
+
+{
+  "price": "not-a-number",
+  "quantity": -5
+
+}
+
+### 8. Помилка: оновлення неіснуючого товару (404)
+PATCH http://localhost:5000/api/items/999999
+Content-Type: application/json
+
+{
+  "price": 25000,
+  "quantity": 10
+}
