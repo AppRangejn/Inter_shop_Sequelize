@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const itemController = require('../controllers/item');
+const itemController = require('../controllers/itemController');
 const { updateItemSchema } = require('../utils/validationSchemas');
 const { validate } = require('../middlewares/validate.mw');
 

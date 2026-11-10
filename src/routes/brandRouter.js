@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const brandController = require('../controllers/brand');
+const brandController = require('../controllers/brandController');
 const { brandTitlesSchema } = require('../utils/validationSchemas');
 const { validate } = require('../middlewares/validate.mw');
 
