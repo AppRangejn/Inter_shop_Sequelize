@@ -1,13 +1,11 @@
-const db = require('./src/db/models');
+require('dotenv').config();
 
-const dbCheck = async () => {
-  try {
-    await db.sequelize.authenticate();
-    console.log('Connection with DB has been successful.');
+const http = require('http');
+const app = require('./app');
 
-  } catch (error) {
-    console.error('Database operation failed:', error.message);
-  }
-};
+const PORT = process.env.PORT;
+const server = http.createServer(app);
 
-dbCheck();
+server.listen(PORT, () => {
+  console.log(`Server is running port ${PORT}`);
+});

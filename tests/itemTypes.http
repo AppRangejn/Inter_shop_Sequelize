@@ -1,0 +1,3 @@
+### Отримати типи товарів 
+GET http://localhost:5000/api/item-types
+Content-Type: application/json

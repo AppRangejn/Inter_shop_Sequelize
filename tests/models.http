@@ -1,0 +1,3 @@
+### Отримати моделі 
+GET http://localhost:5000/api/models
+Content-Type: application/json

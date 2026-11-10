@@ -1,0 +1,3 @@
+### Отримати позиції замовлень 
+GET http://localhost:5000/api/item-orders
+Content-Type: application/json

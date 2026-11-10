@@ -9,7 +9,6 @@ module.exports = {
       'Customers',
       [
         {
-          id: 1,
           name: 'Кіріл Бричковський',
           email: 'kiril@example.com',
           password: passwordHash,
@@ -17,7 +16,6 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          id: 2,
           name: 'Олександра Петренко',
           email: 'olexandra@example.com',
           password: passwordHash,
@@ -25,7 +23,6 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          id: 3,
           name: 'Микита Маковський',
           email: 'mykyta@example.com',
           password: passwordHash,
@@ -33,7 +30,6 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          id: 4,
           name: 'Єлизавета Пилипенко',
           email: 'yelyzaveta@example.com',
           password: passwordHash,
@@ -41,7 +37,6 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          id: 5,
           name: 'Марчук Дмитро',
           email: 'dmytro@example.com',
           password: passwordHash,
@@ -54,11 +49,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('Customers', null, {});
   },
 };

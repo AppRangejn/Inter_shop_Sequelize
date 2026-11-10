@@ -1,0 +1,11 @@
+### 1. Отримання всіх даних 
+GET http://localhost:5000/api/customers
+Content-Type: application/json
+
+### 2. Ім’я покупця, який здійснив найбільше покупок
+GET http://localhost:5000/api/customers/most-orders
+Content-Type: application/json
+
+### 3. Ім’я покупця, який придбав найдорожчий товар
+GET http://localhost:5000/api/customers/most-expensive-item
+Content-Type: application/json

@@ -1,0 +1,19 @@
+### 1. Отримати всі бренди 
+GET http://localhost:5000/api/brands
+Content-Type: application/json
+
+### 2. Отримати бренд за назвою
+POST http://localhost:5000/api/brands/by-titles
+Content-Type: application/json
+
+{
+  "titles": ["Apple", "Samsung", "Xiaomi"]
+}
+
+### 3. Видалення брендів
+DELETE http://localhost:5000/api/brands
+Content-Type: application/json
+
+{
+  "titles": ["Samsung"]
+}
